@@ -44,4 +44,4 @@ $ python chainer/examples/mnist/train_mnist.py
 ## その他メモ
 * TensorFlow、Chainer、Caffeはディープラーニングに特化したライブラリ。機械学習を幅広くやるなら、Scikit-learnか。
 * macOSなら環境構築に手間取ることはないが、Windowsだとどうだろう。
-* 上記全ての環境構築だけなら、10~30分程度。サンプル（MNIST)の実行に30~1時間くらいかかる。
+* 上記の環境構築だけなら、TensorFlowとかChainerとか1つずつ環境作っても10分〜30分程度。サンプル（MNIST)の実行は30分〜1時間くらいかかる。
