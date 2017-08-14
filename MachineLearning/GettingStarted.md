@@ -1,10 +1,12 @@
 # 機械学習 環境構築
 
 ## Python
-AnacondaでPython実行環境を用意する。
+* AnacondaでPython実行環境を用意する。
+* Pythonのバージョン管理ができ、パッケージ管理システムが使え、仮想環境も作れるので凄く便利。
+* Windows版も検証してみたい。
 
 ### [Anaconda](https://www.continuum.io/DOWNLOADS)
-* macOS版をインストール、検証
+* インストーラーをDLして、インストールするだけで利用可能
 
 ## TensorFlow
 * 環境構築の参考にした記事
@@ -14,7 +16,6 @@ AnacondaでPython実行環境を用意する。
     - https://www.tensorflow.org/install/install_mac#the_url_of_the_tensorflow_python_package
 * condaでpython3.5環境構築後、CPUサポート版TensorFlowをインストール
   - `pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.2.1-py3-none-any.whl`
-
 
 ## Chainer環境構築
 * TensorFlowと同じく、condaでpython3.5環境構築してChainerをインストール
@@ -43,3 +44,4 @@ $ python chainer/examples/mnist/train_mnist.py
 ## その他メモ
 * TensorFlow、Chainer、Caffeはディープラーニングに特化したライブラリ。機械学習を幅広くやるなら、Scikit-learnか。
 * macOSなら環境構築に手間取ることはないが、Windowsだとどうだろう。
+* 上記全ての環境構築だけなら、10~30分程度。サンプル（MNIST)の実行に30~1時間くらいかかる。
