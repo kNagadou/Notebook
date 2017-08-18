@@ -51,9 +51,17 @@ bazel build --jobs 2 -c opt //tensorflow/core/distributed_runtime/rpc:grpc_tenso
 ## Validate
 
 ### Server
+
+* Single
 ```
 cd tensorflow
 bazel-bin/tensorflow/core/distributed_runtime/rpc/grpc_tensorflow_server --cluster_spec='local|localhost:2222' --job_name=local --task_id=0
+```
+
+* Cluster
+```
+bazel-bin/tensorflow/core/distributed_runtime/rpc/grpc_tensorflow_server --cluster_spec='master|localhost:2222,worker|localhost:2223' --job_name=master --task_id=0 > master.log &
+bazel-bin/tensorflow/core/distributed_runtime/rpc/grpc_tensorflow_server --cluster_spec='master|localhost:2222,worker|localhost:2223' --job_name=worker --task_id=0 > worker.log &
 ```
 
 ### Client

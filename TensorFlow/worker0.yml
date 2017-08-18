@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: worker0
+spec:
+  containers:
+    - name: worker0
+      command: ["/tensorflow/bazel-bin/tensorflow/core/distributed_runtime/rpc/grpc_tensorflow_server"]
+      args: ["--cluster_spec=master|master:2222,worker0|worker0:2222,worker1|worker1:2222", "--job_name=worker0", "--task_id=0"]
+      image: gcr.io/complete-agency-177007/tensorflow-server
+      ports:
+        - containerPort: 2222
