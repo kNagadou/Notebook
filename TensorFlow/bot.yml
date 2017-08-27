@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bot
+  labels:
+    app: botserver
+spec:
+  containers:
+    - name: bot
+      command: ["jupyter"]
+      args: ["notebook", "--allow-root"]
+      image: knagadou/tensorflow-server
+      ports:
+        - containerPort: 8888
+          hostPort: 8888
